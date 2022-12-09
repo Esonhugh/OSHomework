@@ -6,7 +6,6 @@
 
 typedef int pid_t;
 
-
 #ifndef PRINT_ARGS
 #define PRINT_ARGS
 // debugging.
@@ -63,9 +62,6 @@ int process_input(char ***ret_argv) {
     return argc;
 }
 
-
-
-
 // pipe system
 int piped_system(const char *path, int argc, char **argv) 
 {
@@ -104,7 +100,7 @@ int piped_system(const char *path, int argc, char **argv)
 			if (readCount <= 0) {
 				break; // read Error
 			}
-			printf("child stdout:%s", buf);
+            DEBUG_STRING("child stdout", buf)
 			memset(buf, 0, 1024);
 		}
         // Close when Exit.
