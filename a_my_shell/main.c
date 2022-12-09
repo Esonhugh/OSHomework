@@ -14,10 +14,10 @@ int main(int argc, char *argv[]) {
         }
         DEBUG_STRING("strings[0]", strings[0]);
         if (strcmp(strings[0], "exit")==0) {
-            printf("GoodBye!");
+            printf("GoodBye!\n");
             exit(0);
         }
         int ret = piped_system(strings[0], argc, strings );
-        printf("pipe_system returns %d\n", ret);
+        DEBUG_INT("pipe_system return code:", ret);
     }
 }

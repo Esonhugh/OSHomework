@@ -106,7 +106,9 @@ int piped_system(const char *path, int argc, char **argv)
         // Close when Exit.
 		close(writeStdinFD);
 		close(readStdoutFD);
-		printf("parent:%d wait remote process:%d to exit\n", getpid(), pid);
+        DEBUG_INT("parent pid",getpid());
+        DEBUG_INT("child pid", pid);
+		// printf("parent:%d wait remote process:%d to exit\n", getpid(), pid);
 		int exitCode = 0;
 		waitpid(pid, &exitCode, 0);
 	} else { 
@@ -117,8 +119,8 @@ int piped_system(const char *path, int argc, char **argv)
 		dup2(STDIN_FILENO, readStdinFD);
 		dup2(STDOUT_FILENO, writeStdoutFD);
 		const char *writebuf = "child process prepare to execve\n";
-		printf("child process output\n");
-		printf("child received args:");
+		DEBUG("child process output");
+		DEBUG("child received args:");
 		print_args(argc, argv);
         printf("\n");
 
