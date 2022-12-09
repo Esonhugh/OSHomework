@@ -1,4 +1,4 @@
-CC = aarch64-linux-gnu-gcc
+CC = gcc
 
 main: 
 	$(CC) -o main main.c pipe_system.h pipe_system.c

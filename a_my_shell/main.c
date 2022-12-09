@@ -14,7 +14,7 @@ int process_input(char **ret_argv) {
     int argc = -1;
     char **argv = NULL;
     // 动态分配内存
-    argv = (char **)malloc(1 * sizeof(char *));
+    argv = (char **)malloc(1 * sizeof(char *)); //64
     printf("Shell Promot> ");
 
     char cmd[MAX_LINE_LEN];
