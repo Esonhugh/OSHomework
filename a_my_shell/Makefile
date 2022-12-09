@@ -1,6 +1,6 @@
 CC = gcc
 mainfile = main.c
-pipesysfile = pipedream.c pipedream.h
+pipesysfile = pipe_system.c pipe_system.h
 
 
 debug:
