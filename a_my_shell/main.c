@@ -13,7 +13,8 @@ int main(int argc, char *argv[]) {
             break;
         }
         DEBUG_STRING("strings[0]", strings[0]);
-        if (strcmp(strings[0], "exit")) {
+        if (strcmp(strings[0], "exit")==0) {
+            printf("GoodBye!");
             exit(0);
         }
         int ret = piped_system(strings[0], argc, strings );
