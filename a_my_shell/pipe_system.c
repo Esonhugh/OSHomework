@@ -122,7 +122,6 @@ int piped_system(const char *path, int argc, char **argv)
 		DEBUG("child process output");
 		DEBUG("child received args:");
 		print_args(argc, argv);
-        printf("\n");
 
 		//let kernel take control
 		if (argc != 0) {
