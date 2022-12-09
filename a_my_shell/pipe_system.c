@@ -6,7 +6,20 @@
 
 typedef int pid_t;
 
-#define DEBUG_MODE 1
+
+#ifndef PRINT_ARGS
+#define PRINT_ARGS
+// debugging.
+int print_args(int argc, char ** argv) {
+#ifdef DEBUG_MODE
+    printf("Calling: args[%d]: \n", argc);
+    for (int i = 0; i <= argc ; i++) {
+        printf("Args[%d]: %s\n", i, argv[i]);
+    }
+#endif
+    return 0;
+}
+#endif
 
 // process_input return status Code
 int process_input(char ***ret_argv) {
