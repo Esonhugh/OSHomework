@@ -100,7 +100,7 @@ int piped_system(const char *path, int argc, char **argv)
 			if (readCount <= 0) {
 				break; // read Error
 			}
-            DEBUG_STRING("child stdout", buf)
+            DEBUG_STRING("child stdout", buf);
 			memset(buf, 0, 1024);
 		}
         // Close when Exit.
