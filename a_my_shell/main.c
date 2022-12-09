@@ -18,6 +18,6 @@ int main(int argc, char *argv[]) {
             exit(0);
         }
         int ret = piped_system(strings[0], argc, strings );
-        DEBUG_INT("pipe_system return code:", ret);
+        DEBUG_INT("pipe_system return code", ret);
     }
 }
