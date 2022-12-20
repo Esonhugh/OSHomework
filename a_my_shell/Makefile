@@ -14,6 +14,7 @@ ebpf:
 	endif
 	ifdef syscall
 		bpftrace -e $(bpf_prog_syscall) |grep main
+	endif
 
 debug:
 	$(CC) -o main -D DEBUG_MODE  $(pipesysfile) $(mainfile)
