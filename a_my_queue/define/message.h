@@ -14,10 +14,10 @@
 // Global Messages defines.
 typedef struct MSG
 {
-    // Message type 
-    long mtype; // (long type)the message type 
+    // Message type
+    long mtype;                   // (long type)the message type
     char mtext[Max_Message_Size]; // message data
-    int mdir; // whois the sender?
-} message; // alias as message
+    int mdir;                     // whois the sender?
+} message;                        // alias as message
 
 #endif
