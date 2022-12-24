@@ -2,6 +2,8 @@
 #include "../define/sem.h"
 #include <sys/ipc.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 void *receive(void *arg)
 {
