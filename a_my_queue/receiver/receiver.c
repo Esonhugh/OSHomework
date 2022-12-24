@@ -13,7 +13,8 @@ void* receive(void* arg)
         4. 受到end2时,向sender2发送over2.
         5. 消息全都接收完成后删除消息队列，结束所有线程的运行。
     */
-    message recv_msg; // 声明消息体
+    
+    message recv_msg; // temply store current message
     while(1)
     {
         sem_wait(&recv); // 阻塞，直到可以接收消息，程序消息发送完成后会对此信号量进行 v 操作
