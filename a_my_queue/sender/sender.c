@@ -94,7 +94,7 @@ void *sender2(void *arg)
         }
         // 再次争夺发送信号量，直到输入"exit"
     }
-    sem_wait(&over1); // 等待 receiver 确认返回
+    sem_wait(&over2); // 等待 receiver 确认返回
     // 接收 receiver 发来的 "over1" 消息
     msgrcv(msgqid, &send_msg, sizeof(message), Recv2Send, 0); // 从标识符为msqid的消息队列读取消息并存于msgp中，读取后把此消息从消息队列中删除
     printf("Sender2 has received: %s\n", send_msg.mtext);     // log

@@ -35,6 +35,7 @@ void *receive(void *arg)
 
                 over_status1 = 1; // sender1 结束
                 sem_post(&over1); // over1信号量+1，sender1 可以继续处理接收回复
+                sem_post(&send);  // continue send
             }
             else
             {
@@ -56,6 +57,7 @@ void *receive(void *arg)
 
                 over_status2 = 1; // sender2 结束
                 sem_post(&over2); // over2信号量+1，sender2 可以继续处理接收回复
+                sem_post(&send);  //
             }
             else
             {
