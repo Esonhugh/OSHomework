@@ -47,6 +47,6 @@ void clean_signal() {
     shmdt(shmp); // dt：detach 将共享内存从当前进程中分离
     shmctl(shmid, IPC_RMID, NULL); // ctl：control 删除共享内存
     sem_unlink("sender");    // 删除信号量
-    sem_unlink("receiver1"); // 删除信号量
-    sem_unlink("receiver2"); // 删除信号量
+    sem_unlink("receiver1"); 
+    sem_unlink("receiver2"); 
 }

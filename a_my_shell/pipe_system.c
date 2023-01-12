@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <semaphore.h>
 #include "debug.h"
 
 typedef int pid_t;

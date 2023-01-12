@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <sys/syscall.h>
 #include <stdio.h>
-// #include <asm/types.h>
+#include <asm/types.h>
 
 struct prcs_info {
 	int prio; 			// priority

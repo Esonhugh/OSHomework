@@ -22,15 +22,10 @@ pthread_t sender1d, sender2d, received;
         exit(-1);                                                   \
     }
 
+#define debugIO(a) printf("%s",a);
+
 int main()
 {
-    /*
-
-        1. 初始化信号量
-        2. 创建消息队列
-        3. 创建三个线程并执行
-        4. 线程结束后扫尾工作
-    */
 
     // init sems
     int sem_return_status;
@@ -53,8 +48,11 @@ int main()
     pthread_create(&received, NULL, receive, NULL); // 启动receiver线程
 
     pthread_join(sender1d, NULL); // 等待线程结束
+    //debugIO("sender1");
     pthread_join(sender2d, NULL); // 等待线程结束
+    //debugIO("sender2");
     pthread_join(received, NULL); // 等待线程结束
+    //debugIO("received");
 
     return 0;
 }

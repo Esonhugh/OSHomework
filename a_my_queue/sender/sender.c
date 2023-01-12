@@ -47,7 +47,8 @@ void *sender1(void *arg)
     }
     sem_wait(&over1); // 等待 receiver 确认返回
     // 接收 receiver 发来的 "over1" 消息
-    msgrcv(msgqid, &send_msg, sizeof(message), Recv2Send, 0); // 从标识符为msqid的消息队列读取消息并存于msgp中，读取后把此消息从消息队列中删除
+    msgrcv(msgqid, &send_msg, sizeof(message), Recv2Send, 0); 
+    // 从标识符为msqid的消息队列读取消息并存于msgp中，读取后把此消息从消息队列中删除
     printf("Sender1 has received: %s\n", send_msg.mtext);     // log
     printf("Thread1 has been shut down!\n");
     sem_post(&send);                  // 处理完毕，释放发送信号量，消息队列可以继续使用
